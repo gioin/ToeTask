@@ -1,0 +1,198 @@
+*  {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: #001535;
+    
+}
+
+
+.board {
+    width: 300px;
+    height: 580px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    background-color: #283c4f;
+    align-items: center;
+    justify-items: center;
+    margin-top: 15px;
+
+}
+
+
+.gameName {
+    color: white;
+    font-family: cursive;
+    font-size: 20pt;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.line {
+    background-color: white;
+    width: 100px;
+    height: 2px;
+    margin-bottom: 55px;
+}
+
+.tabs {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(3,auto);
+    justify-items: center;
+    align-items: center;
+
+
+}
+
+
+.tabs.x .rect:not(.x):not(.circle):hover::before,
+.tabs.x .rect:not(.x):not(.circle):hover::after,
+.tabs.circle .rect:not(.x):not(.circle):hover::before,
+.tabs.circle .rect:not(.x):not(.circle):hover::after{
+background-color: rgb(116, 116, 124);
+}
+
+.rect {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #283c4f;
+    border: 1px solid #069bff;
+    box-shadow: 3px 3px 3px 3px #0099ff;
+    position: relative;
+    cursor: pointer;
+}
+
+.rect.x,
+.rect.circle{
+    cursor: not-allowed;
+}
+
+.rect:first-child,
+.rect:nth-child(2),
+.rect:nth-child(3){
+    border-top: none;
+    box-shadow: none;
+}
+
+.rect:nth-child(3n+1){
+    border-left: none;
+    box-shadow: none;
+
+}
+
+.rect:nth-child(3n+3){
+    border-right: none;
+    box-shadow: none;
+
+}
+
+.rect:last-child,
+.rect:nth-child(7),
+.rect:nth-child(8){
+    border-bottom: none;
+    box-shadow: none;
+
+}
+
+
+.rect.x::before,
+.rect.x::after{
+    background-color: white;
+
+}
+
+.rect.x::before,
+.rect.x::after,
+.tabs.x .rect:not(.x):not(.circle):hover::before,
+.tabs.x .rect:not(.x):not(.circle):hover::after{
+    content: "";
+    position: absolute;
+    width: 11px;
+    height: 30px;
+
+}
+
+.rect.x::before,
+.tabs.x .rect:not(.x):not(.circle):hover::before{
+    transform: rotate(0) skew(-30deg);
+
+}
+
+.rect.x::after,
+.tabs.x .rect:not(.x):not(.circle):hover::after{
+    transform: rotate(0deg) skew(30deg);
+
+}
+
+
+.rect.circle::before,
+.rect.circle::after{
+    background-color: white;
+
+}
+
+.rect.circle::before,
+.rect.circle::after,
+.tabs.circle .rect:not(.x):not(.circle):hover::before,
+.tabs.circle .rect:not(.x):not(.circle):hover::after{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+
+}
+
+.rect.circle::before,
+.tabs.circle .rect:not(.x):not(.circle):hover::before{
+    width: 27px;
+    height: 27px;
+}
+
+.rect.circle::after,
+.tabs.circle .rect:not(.x):not(.circle):hover::after{
+    width: 12px;
+    height: 6px;
+    background-color: #283c4f;
+    transform: rotate(-45deg);
+}
+
+
+
+
+.butt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 185px;
+    margin-top: 55px;
+
+}
+
+#newGame,
+#history {
+    background-color: #f1c506;
+    border: none;
+    font-weight: bolder;
+    font-size: 12pt;
+    height: 28px;
+    width: 90px;
+    cursor: pointer;
+    font-family: cursive;
+
+}
+
+
+
